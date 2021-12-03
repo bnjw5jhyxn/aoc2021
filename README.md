@@ -1,7 +1,7 @@
 # Advent of Code 2021
 
-steps to compile and run each solution:
+steps to compile and run part `a` of each day's puzzle:
 ```
-mlton main.mlb
-./main < input
+mlton a.mlb
+./a < input
 ```
