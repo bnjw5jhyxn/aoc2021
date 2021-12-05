@@ -1,0 +1,8 @@
+local
+   $(SML_LIB)/basis/basis.mlb
+   util.sig
+   util.sml
+in
+   signature UTIL
+   structure Util
+end
