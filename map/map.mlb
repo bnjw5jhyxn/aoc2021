@@ -1,0 +1,11 @@
+local
+   $(SML_LIB)/basis/basis.mlb
+   ../util/util.mlb
+   order.sig
+   map.sig
+   vector-map.fun
+in
+   signature ORDER
+   signature MAP
+   functor VectorMap
+end
