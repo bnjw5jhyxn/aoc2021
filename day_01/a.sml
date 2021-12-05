@@ -1,11 +1,11 @@
-fun count_increases_tail (x, xs, c) =
+fun countIncreasesTail (x, xs, c) =
    case xs of
-        y :: ys => count_increases_tail (y, ys, if x < y then c + 1 else c)
+        y :: ys => countIncreasesTail (y, ys, if x < y then c + 1 else c)
       | [] => c
 
-fun count_increases l =
+fun countIncreases l =
    case l of
-        x :: xs => count_increases_tail (x, xs, 0)
+        x :: xs => countIncreasesTail (x, xs, 0)
       | [] => 0
 
-val () = print (Int.toString (count_increases (Util.read_inputs_int ())) ^ "\n")
+val () = print (Int.toString (countIncreases (Util.readInputsInt ())) ^ "\n")

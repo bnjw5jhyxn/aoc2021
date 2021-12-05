@@ -1,29 +1,29 @@
-fun at_least_half (a, b) = 2 * a >= b
-fun less_than_half (a, b) = 2 * a < b
+fun atLeastHalf (a, b) = 2 * a >= b
+fun lessThanHalf (a, b) = 2 * a < b
 
-fun oxygen_tail (i, l) =
+fun oxygenTail (i, l) =
    case l of
         x :: [] => boolvec2int x
-      | _ => oxygen_tail (i + 1,
-      if at_least_half (Vector.sub (get_num_ones l, i), length l)
+      | _ => oxygenTail (i + 1,
+      if atLeastHalf (Vector.sub (getNumOnes l, i), length l)
       then List.filter (fn v => Vector.sub (v, i)) l
       else List.filter (fn v => not (Vector.sub (v, i))) l)
 
-fun oxygen l = oxygen_tail (0, l)
+fun oxygen l = oxygenTail (0, l)
 
-fun scrubber_tail (i, l) =
+fun scrubberTail (i, l) =
    case l of
         x :: [] => boolvec2int x
-      | _ => scrubber_tail (i + 1,
-      if less_than_half (Vector.sub (get_num_ones l, i), length l)
+      | _ => scrubberTail (i + 1,
+      if lessThanHalf (Vector.sub (getNumOnes l, i), length l)
       then List.filter (fn v => Vector.sub (v, i)) l
       else List.filter (fn v => not (Vector.sub (v, i))) l)
 
-fun scrubber l = scrubber_tail (0, l)
+fun scrubber l = scrubberTail (0, l)
 
 val () =
    let
-      val l = read_inputs_boolvec ()
+      val l = readInputsBoolvec ()
    in
       print ((Int.toString ((oxygen l) * scrubber l)) ^ "\n")
    end

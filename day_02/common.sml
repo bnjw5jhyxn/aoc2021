@@ -1,6 +1,6 @@
 datatype inst = FORWARD of int | DOWN of int | UP of int
 
-fun inst_from_str s =
+fun instFromStr s =
    if String.isPrefix "forward " s
    then FORWARD (valOf (Int.fromString (String.extract
    (s, String.size "forward ", NONE))))
@@ -12,4 +12,4 @@ fun inst_from_str s =
    (s, String.size "up ", NONE))))
    else raise Match
 
-fun read_inputs_inst () = map inst_from_str (Util.read_inputs ())
+fun readInputsInst () = map instFromStr (Util.readInputs ())

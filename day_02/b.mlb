@@ -1,5 +1,4 @@
 $(SML_LIB)/basis/basis.mlb
-../common/util.sig
-../common/util.sml
+../util/util.mlb
 common.sml
 b.sml
