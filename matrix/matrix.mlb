@@ -1,0 +1,9 @@
+local
+   $(SML_LIB)/basis/basis.mlb
+   ../util/util.mlb
+   matrix.sig
+   matrix.sml
+in
+   signature MATRIX
+   structure Matrix
+end
