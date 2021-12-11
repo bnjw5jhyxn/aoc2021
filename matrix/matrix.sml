@@ -41,6 +41,21 @@ fun subDefault (T (v, m, n), i, j, x) =
    then Vector.sub (v, i * n + j)
    else x
 
+fun update (T (v, m, n), i, j, f) =
+   if 0 <= i andalso i < m andalso 0 <= j andalso j < n
+   then T (Vector.update (v, i * n + j, f (Vector.sub (v, i * n + j))), m, n)
+   else raise Fail ("(" ^ (Int.toString i) ^ "," ^ (Int.toString j) ^ ")")
+
 fun fold f b (T (v, _, _)) = Vector.foldl f b v
+
+fun map (T (v, m, n), f) = T (Vector.map f v, m, n)
+
+fun indicesSuchThat (T (v, m, n), f) =
+   Vector.foldri
+   (fn (idx, x, acc) =>
+   if f x
+   then (Int.quot (idx, n), Int.rem (idx, n)) :: acc
+   else acc)
+   [] v
 
 end

@@ -8,6 +8,9 @@ val fromRows: 'a vector vector -> 'a t
 val fromColumns: 'a vector vector -> 'a t
 val sub: 'a t * int * int -> 'a
 val subDefault: 'a t * int * int * 'a -> 'a
+val update: 'a t * int * int * ('a -> 'a) -> 'a t
 val fold: ('a * 'b -> 'b) -> 'b -> 'a t -> 'b
+val map: 'a t * ('a -> 'b) -> 'b t
+val indicesSuchThat: 'a t * ('a -> bool) -> (int * int) list
 
 end
