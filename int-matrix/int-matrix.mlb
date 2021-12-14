@@ -1,0 +1,10 @@
+local
+   $(SML_LIB)/basis/basis.mlb
+   $(SMACKAGE)/cmlib/v3/cmlib.mlb
+   ../util/util.mlb
+   int-matrix.sig
+   int-matrix.sml
+in
+   signature INT_MATRIX
+   structure IntMatrix
+end
