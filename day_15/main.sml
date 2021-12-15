@@ -5,7 +5,7 @@ structure Ipd = RedBlackDict (
    )
 )
 
-structure Iq = LeftistPQueue (IntOrdered)
+structure Iq = PairingPQueue (IntOrdered)
 
 fun parseLine s =
    Vector.tabulate (String.size s - 1,
